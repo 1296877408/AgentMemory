@@ -6,7 +6,7 @@ use english as output language
 1.Identify all entities. For each identified entity, extract the following information:
 - entity_name: Name of the entity
 - entity_type: type of the entity
-- entity_description: Comprehensice description of the entity's attributes and activities
+- entity_description: Comprehensive description of the entity's attributes and activities
 Format each entity as {"entity":<entity_type>, "name":<entity_name>, "description":entity_description}
 
 2.From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are related to each other

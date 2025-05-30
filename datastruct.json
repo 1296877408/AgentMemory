@@ -1,0 +1,47 @@
+{
+  "text": {
+    "vectordb": {
+      "id": "",
+      "vector": "",
+      "payload":{
+        "content": ""
+      }
+    }
+  },
+  "entity": {
+    "vectordb": {
+      "id": "id of entity",
+      "vector": "embedding of entity"
+    },
+    "graphdb": {
+      "ids": "id of entity",
+      "name": "name of entity",
+      "type": "type of entity",
+      "description": "description of entity",
+      "create_time": "a",
+      "text": "chunk id of entity",
+      "used": "search time of entity"
+    }
+  },
+  "relationship": {
+    "vectordb": {
+      "id": "",
+      "vector": ""
+      },
+    "graphdb": {
+      "ids": "",
+      "description": "",
+      "keyword": "",
+      "text_chunk": "",
+      "used": ""
+    }
+  },
+  "community": {
+    "vectordb": {
+      "ids": "",
+      "text": [""],
+      "entity":["ids"],
+      "relationship": ["ids"]
+    }
+  }
+}
