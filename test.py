@@ -1,41 +1,26 @@
-from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct
+from py2neo import Graph
 
-# 初始化 Qdrant 本地服务
-client = QdrantClient("http://localhost:6333")
+# 连接到 Neo4j 数据库
+graph = Graph("bolt://localhost:7687", auth=("neo4j", "aA007812"))
 
-# 创建 collection
-client.recreate_collection(
-    collection_name="example",
-    vectors_config=VectorParams(size=512, distance=Distance.COSINE),
-)
+# 定义参数
+names = ["a", "b", "c"]
 
-point = [
-    PointStruct(
-        id=1,
-        vector=[0.1]*512,
-        payload={'ids': 'feqfeqe'}
-    )
-]
-client.upsert(
-    collection_name="example",
-    points=point,
-)
-# 插入向量
-# 搜索相似向量
+# 执行查询
+query = """
+UNWIND $names AS name1
+UNWIND $names AS name2
+match (n1 {name:name1})
+match (n2 {name:name2})
+where n1.name <> n2.name
+match (n1)-[r1]->(n2)
+RETURN n1, n2, r1
+"""
 
-results = client.search(
-    collection_name="example",
-    query_vector=[0.1]*512,
-    limit=5,
-)
-from qdrant_client.models import Filter, FieldCondition, MatchValue
+# 运行查询并传入参数
+result = graph.run(query, names=names)
 
-result = client.retrieve(
-    collection_name="example",
-    ids=[1]
-)
-
-print(result)
-
-pass
+# 输出结果
+for record in result:
+    print(record)
+    pass

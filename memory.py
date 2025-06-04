@@ -1,6 +1,6 @@
 import long_memory
 import work_memory
-
+import SensoryMemory
 
 class Memory:
     def __init__(self):
@@ -8,6 +8,7 @@ class Memory:
         self.max_loop = 10
         self.update_agent = None
         self.retrieve_agent = None
+        self.sensory_memory = SensoryMemory.SensoryMemory()
         self.long_memory = long_memory.LongTermMemory()
         self.work_memory = work_memory.WorkMemory()
 
@@ -35,4 +36,7 @@ class Memory:
             self.max_loop = 10
         drop_list = self.work_memory.insert(content)
         self.long_memory.temporary_longterm_memory.append(drop_list)
+
+    def insert(self, content):
+        self.long_memory.insert(content)
 

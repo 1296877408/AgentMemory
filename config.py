@@ -1,3 +1,3 @@
-class DBConfig(object):
-    def __init__(self, *args, **kwargs):
+class MemoryConfig:
+    def __init__(self, config:dict):
         pass
