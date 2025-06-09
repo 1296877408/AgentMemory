@@ -11,7 +11,8 @@
   "entity": {
     "vectordb": {
       "id": 1,
-      "vector": "embedding of entity"
+      "vector": "embedding of entity",
+      "payload": {"entity_id": 1}
     },
     "graphdb": {
       "ids": 1,
@@ -31,7 +32,7 @@
       },
     "graphdb": {
       "ids": 1,
-      "description": ["", "", ""],
+      "description": "",
       "keyword": "",
       "text_chunk": "",
       "used": "",
@@ -49,3 +50,4 @@
     }
   }
 }
+

@@ -1,8 +1,7 @@
-[
-  {
-    "chunk_num": 0,
-    "entity_num": 0,
-    "relationship_num": 0,
+{
+    "chunk_num": 2,
+    "entity_num": 8,
+    "entity_description_num": 16,
+    "relationship_num": 8,
     "community_num": 0
-  }
-]
+}

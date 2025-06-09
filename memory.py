@@ -6,8 +6,8 @@ class Memory:
     def __init__(self):
         self.wait_to_update = 0
         self.max_loop = 10
-        self.update_agent = None
-        self.retrieve_agent = None
+        #self.update_agent = None
+        #self.retrieve_agent = None
         self.sensory_memory = SensoryMemory.SensoryMemory()
         self.long_memory = long_memory.LongTermMemory()
         self.work_memory = work_memory.WorkMemory()
@@ -39,4 +39,7 @@ class Memory:
 
     def insert(self, content):
         self.long_memory.insert(content)
+
+    def update(self):
+        self.long_memory.update()
 
